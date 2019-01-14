@@ -1,0 +1,14 @@
+{
+  "name": "personal-blog-api",
+  "version": "1.0.0",
+  "description": "Personal Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shahabuddin Ahmed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
