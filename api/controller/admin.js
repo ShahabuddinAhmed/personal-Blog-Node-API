@@ -49,8 +49,7 @@ exports.registerAdmin = (req, res, next) => {
                     .then(result => {
                         console.log(result);
                         res.status(201).json({
-                            message: 'Data successfully is added',
-                            result: result
+                            message: 'Data successfully is added'
                         });
                     })
                     .catch(err => {
