@@ -13,4 +13,4 @@ const adminSchema = mongoose.Schema({
     adminPicture: { type: String, default: 'image.jpg' }
 });
 
-module.exports = mongoose.model('Admin', adminSchema);
+module.exports = mongoose.model('Admins', adminSchema);
