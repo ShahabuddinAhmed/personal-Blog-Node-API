@@ -7,10 +7,7 @@ const postSchema = mongoose.Schema({
     catagory: { type: String, required: true },
     postType: { type: String, required: true },
     picture: { type: String, default: 'image.jpg' },
-    publishedDate: { type: String, required: true },
-    facebook: { type: number, default: 0 },
-    linkedin: { type: number, default: 0 },
-    twiter: { type: number, default: 0 },
+    publishedDate: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Post', postSchema);
+module.exports = mongoose.model('Posts', postSchema);
