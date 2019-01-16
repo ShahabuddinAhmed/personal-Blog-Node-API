@@ -4,8 +4,8 @@ const adminCheckAuth = require('../middleware/admin-auth');
 const replayController = require('../controller/replay');
 
 router.post('/create', replayController.createReplay);
-router.get('/:commentID', replayController.getOneReplay);
-router.patch('/update/:commentID', replayController.updateReplay);
-router.delete('/delete/:commentID', replayController.deteleteReplay);
+router.get('/:replayID', replayController.getOneReplay);
+router.patch('/update/:replayID', replayController.updateReplay);
+router.delete('/delete/:replayID', replayController.deteleteReplay);
 
 module.exports = router;
