@@ -1,21 +1,19 @@
 const mongoose = require('mongoose');
-const Comments = require('../models/comment');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const Replays = require('../models/replay');
 
-exports.createComment = (req, res, next) => {
-    const comment = new Comments({
+exports.createReplay = (req, res, next) => {
+    const replay = new Replays({
         _id: new mongoose.Types.ObjectId(),
-        comment: req.body.comment,
-        commentDate: req.body.commentDate,
-        commentID: req.body.commentID
+        replay: req.body.replay,
+        replayDate: req.body.replayDate,
+        replayID: req.body.replayID
     });
-    comment
+    replay
     .save()
     .then(result => {
         console.log(result);
         res.status(201).json({
-            message: 'Data successfully is added'
+            message: 'Replay successfully is added'
         });
     })
     .catch(err => {
@@ -26,9 +24,9 @@ exports.createComment = (req, res, next) => {
     });
 }
 
-exports.getOneComment = (req, res, next) => {
-    const id = req.params.commentID;
-    Comments.findById(id)
+exports.getOneReplay = (req, res, next) => {
+    const id = req.params.replayID;
+    Replays.findById(id)
     .exec()
     .then(doc => {
         if(doc) {
@@ -48,12 +46,12 @@ exports.getOneComment = (req, res, next) => {
     })
 }
 
-exports.updateComment = (req, res, next) => {
-    const id = req.params.commentID;
-    Comments.update({ _id: id }, { $set: {
-        comment: req.body.comment,
-        commentDate: req.body.commentDate,
-        commentID: req.body.commentID
+exports.updateReplay = (req, res, next) => {
+    const id = req.params.replayID;
+    Replays.update({ _id: id }, { $set: {
+        replay: req.body.replay,
+        replayDate: req.body.replayDate,
+        replayID: req.body.replayID
     }})
     .exec()
     .then(result => {
@@ -70,13 +68,13 @@ exports.updateComment = (req, res, next) => {
     });
 }
 
-exports.deteleteCommant = (req, res, next) => {
-    const id = req.params.commentID;
-    Comments.remove({ _id: id })
+exports.deteleteReplay = (req, res, next) => {
+    const id = req.params.replayID;
+    Replays.remove({ _id: id })
     .exec()
     .then(result => {
         res.status(200).json({
-            message: "Comment is successfully deleted"
+            message: "replay is successfully deleted"
         });
     })
     .catch(err => {
