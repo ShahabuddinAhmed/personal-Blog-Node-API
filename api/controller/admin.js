@@ -42,6 +42,7 @@ exports.registerAdmin = (req, res, next) => {
                         _id: new mongoose.Types.ObjectId(),
                         adminName: req.body.adminName,
                         adminEmail: req.body.adminEmail,
+                        adminPicture: req.body.adminPicture,
                         adminPassword: hash
                     });
                     admin
@@ -140,6 +141,7 @@ exports.updateAdmin = (req, res, next) => {
             Admins.update({ _id: id }, { $set: {
                 adminName: req.body.adminName,
                 adminEmail: req.body.adminEmail,
+                adminPicture: req.body.adminPicture,
                 adminPassword: hash
             }})
             .exec()
