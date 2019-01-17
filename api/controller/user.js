@@ -42,6 +42,7 @@ exports.registerUser = (req, res, next) => {
                         _id: new mongoose.Types.ObjectId(),
                         userName: req.body.userName,
                         userEmail: req.body.userEmail,
+                        userPicture: req.body.userPicture,
                         userPassword: hash
                     });
                     user
@@ -140,6 +141,7 @@ exports.updateUser = (req, res, next) => {
             Users.update({ _id: id }, { $set: {
                 userName: req.body.userName,
                 userEmail: req.body.userEmail,
+                userPicture: req.body.userPicture,
                 userPassword: hash
             }})
             .exec()
