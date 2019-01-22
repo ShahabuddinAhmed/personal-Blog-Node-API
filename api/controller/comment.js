@@ -26,7 +26,7 @@ exports.createComment = (req, res, next) => {
 
 exports.getOneComment = (req, res, next) => {
     const id = req.params.commentID;
-    Comments.findById(id)
+    Comments.find({commentID: id})
     .exec()
     .then(doc => {
         if(doc) {
