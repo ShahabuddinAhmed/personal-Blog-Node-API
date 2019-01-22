@@ -26,7 +26,7 @@ exports.createReplay = (req, res, next) => {
 
 exports.getOneReplay = (req, res, next) => {
     const id = req.params.replayID;
-    Replays.findById(id)
+    Replays.find({ replayID: id })
     .exec()
     .then(doc => {
         if(doc) {
