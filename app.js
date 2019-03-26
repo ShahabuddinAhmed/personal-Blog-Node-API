@@ -32,6 +32,7 @@ app.use('/comment', CommentRoutes);
 app.use('/replay', replaytRoutes);
 app.use('/about', aboutWriterRoutes);
 app.use('/catagory', catagoryRoutes);
+app.use(express.static('public'));
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');
